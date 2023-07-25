@@ -41,17 +41,17 @@ app.get('/',async (req, res) => {
 
 app.use(express.json());
 
-app.get('/teste-retonar/:CPF',async (req, res) => { 
+app.get('/teste-retornar/:CPF',async (req, res) => { 
   
-  return res.json( await db('users').where('CPF', req.params.CPF).select('*')); 
+  return res.json( await db('pacientes').where('CPF', req.params.CPF).select('*')); 
  
  });
  
- app.post('/retonar/',async (req, res) => {
+ app.post('/retornar/',async (req, res) => {
    
    const { CPF } = req.body;
 
-  return res.json( await db('users').where('CPF', CPF).select('*')); 
+  return res.json( await db('pacientes').where('CPF', CPF).select('*')); 
  
  });
 
@@ -59,11 +59,11 @@ app.post('/Criar_paciente', async (req, res) => {
   console.log(req.body);
   const {
       CPF,
+      email,
       Nome,
       Tipo_documento,
       RG,
       Orgao_expedidor,
-      RS,
       Dt_emissao,
       Dt_nascimento,
       Nacionalidade,
@@ -81,17 +81,17 @@ app.post('/Criar_paciente', async (req, res) => {
       Numero,
       Complemento,
       Bairro,
+      cidade
   } = req.body;
 
-  const id = crypto.randomBytes(4).toString('HEX');
  
   await db('pacientes').insert({
       CPF,
       Nome,
       Tipo_documento,
       RG,
+      email,
       Orgao_expedidor,
-      RS,
       Dt_emissao,
       Dt_nascimento,
       Nacionalidade,
@@ -109,9 +109,10 @@ app.post('/Criar_paciente', async (req, res) => {
       Numero,
       Complemento,
       Bairro,
+      cidade
   });
 
-  return res.json({ id });
+  return res.json({ CPF });
 });
 
 
