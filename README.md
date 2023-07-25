@@ -7,12 +7,11 @@ Este projeto tem como objetivo desenvolver um Prontuário Odontológico Digital 
 
 O sistema permitirá que os dentistas e outros profissionais de saúde registrem as informações de saúde bucal dos pacientes, incluindo histórico médico, tratamentos realizados, prescrições, exames de imagem, e quaisquer outras informações relevantes para o acompanhamento dos cuidados odontológicos.
 
-## Funcionalidades Principais
+## Tarefas:
 
-O Prontuário Odontológico Digital para a UFPel contará com as seguintes funcionalidades principais:
-
-- [ ] Cadastrar paciente
-- [ ] Consultar paciente 
+- [x] Cadastrar paciente
+- [x] Consultar paciente
+- [ ] Integração com frontend
 
 ## Tecnologias Utilizadas
 
